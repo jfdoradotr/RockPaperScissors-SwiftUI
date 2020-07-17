@@ -14,6 +14,9 @@ enum GameOptions: String, CaseIterable {
 }
 
 struct ContentView: View {
+
+  @State private var selection = 0
+
   var body: some View {
     ZStack {
       Color(.systemBackground)
@@ -35,13 +38,22 @@ struct ContentView: View {
 
         HStack {
           ForEach(0..<3, content: { index in
-            Button(action: {}, label: {
-              Text(GameOptions.allCases[index].rawValue)
-                .font(.system(size: 80, weight: .regular))
-                .padding()
+            Button(action: {
+              self.selection = index
+            }, label: {
+              ZStack {
+                Circle()
+                  .foregroundColor(.primary)
+                  .shadow(color: .primary, radius: 5)
+
+                Text(GameOptions.allCases[index].rawValue)
+                  .font(.system(size: 80, weight: .regular))
+                  .padding()
+              }
             })
           })
         }
+        .padding()
 
         HStack {
           Text("Wins: 0")
@@ -51,6 +63,7 @@ struct ContentView: View {
           Text("Lose: 0")
         }
         .padding()
+        .font(.system(size: 14, weight: .semibold, design: .rounded))
       }
     }
   }
