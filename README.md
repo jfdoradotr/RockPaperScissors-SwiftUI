@@ -9,6 +9,12 @@
 
 A brain training game that challenges players to win or lose at rock, paper, scissors.
 
-## Tags
+## Screenshots
 
-Create this app will go through steps, so all of them will be tagged to make it easier to follow.
+![ss01](.screenshots/ss01.png)
+
+![ss02](.screenshots/ss02.png)
+
+![ss03](.screenshots/ss03.png)
+
+![ss04](.screenshots/ss04.png)
